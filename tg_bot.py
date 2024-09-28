@@ -6,7 +6,7 @@ from google.cloud import dialogflow
 from telegram import Update, ForceReply
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
-# Enable logging
+
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
 )
@@ -67,7 +67,6 @@ def echo_dialogflow(update, context):
     session_id = update.effective_chat.id
     serialized_answer = detect_intent_text(project_id, session_id, message_to_dialogflow)
     update.message.reply_text(serialized_answer['answer'])
-
 
 
 if __name__ == '__main__':
