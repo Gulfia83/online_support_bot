@@ -24,7 +24,7 @@ def create_intent(project_id, display_name, training_phrases_parts, message_text
         training_phrase = dialogflow.Intent.TrainingPhrase(parts=[part])
         training_phrases.append(training_phrase)
 
-    text = dialogflow.Intent.Message.Text(text=message_texts)
+    text = dialogflow.Intent.Message.Text(text=[message_texts])
     message = dialogflow.Intent.Message(text=text)
 
     intent = dialogflow.Intent(
