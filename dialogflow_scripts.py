@@ -10,12 +10,9 @@ def detect_intent_text(project_id, session_id, message_to_dialogflow, language_c
     response = session_client.detect_intent(
         request={"session": session, "query_input": query_input}
     )
-    serialized_answer = {
-        'intention': response.query_result.intent.display_name,
-        'confidence': response.query_result.intent_detection_confidence,
-        'answer': response.query_result.fulfillment_text
-    }
-    return serialized_answer
+    
+    return response.query_result.fulfillment_text, \
+        response.query_result.intent.is_fallback
 
 
 def create_intent(project_id,
