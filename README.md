@@ -7,6 +7,9 @@ Chat bots to help the support service. They are trained to answer standard user 
 
 ## Examples of bots
 
+
+https://github.com/user-attachments/assets/54f35e40-6834-449e-8155-a2b675cd0a28
+
 ## Installation
 1. Install Python 3.10.12 and create a virtual environment, activate it:
 
