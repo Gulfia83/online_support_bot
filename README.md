@@ -7,6 +7,7 @@ Chat bots to help the support service. They are trained to answer standard user 
 
 ## Examples of bots
 
+https://github.com/user-attachments/assets/9788b2b8-daf1-4cb1-abb6-522af87154af
 
 https://github.com/user-attachments/assets/54f35e40-6834-449e-8155-a2b675cd0a28
 
