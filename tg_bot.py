@@ -34,12 +34,12 @@ def start(update: Update, context: CallbackContext) -> None:
 def echo_dialogflow(update, context):
     message_to_dialogflow = update.message.text
     session_id = update.effective_chat.id
-    serialized_answer = detect_intent_text(
+    serialized_answer, _ = detect_intent_text(
         project_id,
         session_id,
         message_to_dialogflow
         )
-    update.message.reply_text(serialized_answer['answer'])
+    update.message.reply_text(serialized_answer)
 
 
 if __name__ == '__main__':   
