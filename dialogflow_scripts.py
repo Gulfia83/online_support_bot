@@ -42,4 +42,4 @@ def create_intent(project_id,
         request={"parent": parent, "intent": intent}
     )
 
-    print("Intent created: {}".format(response))
+    return response

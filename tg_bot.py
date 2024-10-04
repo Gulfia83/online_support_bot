@@ -31,9 +31,9 @@ def start(update: Update, context: CallbackContext) -> None:
     )
 
 
-def echo_dialogflow(update, context):
+def handle_dialogflow(update, context):
     message_to_dialogflow = update.message.text
-    session_id = update.effective_chat.id
+    session_id = update.effective_chat.tg_id
     serialized_answer, _ = detect_intent_text(
         project_id,
         session_id,
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
         dispatcher.add_handler(CommandHandler("start", start))
         dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command,
-                                              echo_dialogflow))
+                                              handle_dialogflow))
 
         updater.start_polling()
         updater.idle()

@@ -24,10 +24,10 @@ class TelegramLogsHandler(logging.Handler):
         self.tg_bot.send_message(chat_id=self.chat_id, text=log_entry)
 
 
-def echo_dialogflow(event, vk_api, project_id):
+def handle_dialogflow(event, vk_api, project_id):
     reply_text, is_fallback = detect_intent_text(
         project_id,
-        event.user_id,
+        event.vk_id,
         event.text
     )
 
@@ -60,6 +60,6 @@ if __name__ == "__main__":
         longpoll = VkLongPoll(vk_session)
         for event in longpoll.listen():
             if event.type == VkEventType.MESSAGE_NEW and event.to_me:
-                echo_dialogflow(event, vk_api, project_id)
+                handle_dialogflow(event, vk_api, project_id)
     except Exception as exception:
         logger.exception(exception)
