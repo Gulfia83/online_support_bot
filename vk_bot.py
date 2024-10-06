@@ -27,13 +27,13 @@ class TelegramLogsHandler(logging.Handler):
 def handle_dialogflow(event, vk_api, project_id):
     reply_text, is_fallback = detect_intent_text(
         project_id,
-        event.vk_id,
+        vk-event.user_id,
         event.text
     )
 
     if not is_fallback:
         vk_api.messages.send(
-            user_id=event.user_id,
+            user_id=vk-event.user_id,
             message=reply_text,
             random_id=random.randint(1, 1000)
         )

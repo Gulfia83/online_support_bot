@@ -33,7 +33,7 @@ def start(update: Update, context: CallbackContext) -> None:
 
 def handle_dialogflow(update, context):
     message_to_dialogflow = update.message.text
-    session_id = update.effective_chat.tg_id
+    session_id = update.effective_chat.tg-id
     serialized_answer, _ = detect_intent_text(
         project_id,
         session_id,
